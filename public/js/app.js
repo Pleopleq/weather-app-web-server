@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     locationForm.addEventListener("submit", (e) => {
         e.preventDefault()
+        fetchOutput.innerHTML = `<h2>Loading...</h2>`
+
         fetch(`http://localhost:3000/weather?address=${locationInput.value}`)
         .then((result) => {
         result.json()
